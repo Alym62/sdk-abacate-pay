@@ -8,5 +8,4 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CPF {
-    String message() default  "msg.error.cpf";
 }

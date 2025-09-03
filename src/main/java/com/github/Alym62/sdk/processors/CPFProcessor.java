@@ -24,9 +24,7 @@ public class CPFProcessor {
                 if (value instanceof String) {
                     final String cpf = value.toString();
                     if (!CPFValidator.isValidCpf(cpf)) {
-                        CPF annotation = field.getAnnotation(CPF.class);
-                        String messageDefault = properties.getString(annotation.message());
-
+                        String messageDefault = properties.getString("msg.error.cpf");
                         throw new CPFInvalidException(messageDefault);
                     }
                 }

@@ -30,6 +30,6 @@ public class CPFValidator {
         }
 
         int result = sum % 11;
-        return (result < 2) ? 0 : 11;
+        return (result < 2) ? 0 : (11 - result);
     }
 }

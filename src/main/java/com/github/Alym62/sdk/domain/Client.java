@@ -17,7 +17,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClientProxy {
+public class Client {
     @Required(name = "name")
     private String name;
 

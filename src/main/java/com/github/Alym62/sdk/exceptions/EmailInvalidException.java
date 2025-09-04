@@ -2,10 +2,10 @@ package com.github.Alym62.sdk.exceptions;
 
 import com.github.Alym62.sdk.configurations.AppConfig;
 
-public class FieldRequiredException extends SDKAbacatePayException {
+public class EmailInvalidException extends SDKAbacatePayException {
     private final String message;
 
-    public FieldRequiredException(String message) {
+    public EmailInvalidException(String message) {
         super(message, 400);
         this.message = message;
     }
@@ -15,7 +15,7 @@ public class FieldRequiredException extends SDKAbacatePayException {
         final ProblemDetails problemDetails = new ProblemDetails();
         problemDetails.setInstance(AppConfig.getUrlAbacatePay());
         problemDetails.setStatus(400);
-        problemDetails.setTitle("Some field invalid, please check");
+        problemDetails.setTitle("Email invalid, please check");
         problemDetails.setMessage(message);
 
         return problemDetails;

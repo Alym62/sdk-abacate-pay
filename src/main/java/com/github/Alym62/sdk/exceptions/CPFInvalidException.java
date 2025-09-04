@@ -10,7 +10,7 @@ public class CPFInvalidException extends SDKAbacatePayException {
     private final String message;
 
     public CPFInvalidException(String message) {
-        super(message, 404);
+        super(message, 400);
         this.message = message;
     }
 
@@ -18,7 +18,7 @@ public class CPFInvalidException extends SDKAbacatePayException {
     protected ProblemDetails toProblemDetails() {
         final ProblemDetails problemDetails = new ProblemDetails();
         problemDetails.setInstance(AppConfig.getUrlAbacatePay());
-        problemDetails.setStatus(404);
+        problemDetails.setStatus(400);
         problemDetails.setTitle("CPF invalid, please check");
         problemDetails.setMessage(message);
 

@@ -20,6 +20,21 @@
       <artifactId>lombok</artifactId>
       <version>1.18.30</version>
     </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-core</artifactId>
+      <version>13.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-okhttp</artifactId>
+      <version>13.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign</groupId>
+      <artifactId>feign-jackson</artifactId>
+      <version>13.2</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

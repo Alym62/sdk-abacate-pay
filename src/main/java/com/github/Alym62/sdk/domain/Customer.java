@@ -1,13 +1,13 @@
 package com.github.Alym62.sdk.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.Alym62.sdk.annotations.CPF;
 import com.github.Alym62.sdk.annotations.Email;
 import com.github.Alym62.sdk.annotations.Required;
 import com.github.Alym62.sdk.processors.CPFProcessor;
 import com.github.Alym62.sdk.processors.EmailProcessor;
 import com.github.Alym62.sdk.processors.RequiredProcessor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 /**
  * @author Alyasaf Meireles
@@ -15,23 +15,29 @@ import lombok.Getter;
  */
 
 @Getter
-public class Client {
+@ToString
+@NoArgsConstructor
+public class Customer {
     @Required(field = "name")
+    @JsonProperty("name")
     private String name;
 
     @Required(field = "cellPhone")
+    @JsonProperty("cellphone")
     private String cellPhone;
 
     @Required(field = "email")
     @Email
+    @JsonProperty("email")
     private String email;
 
     @Required(field = "taxId")
     @CPF
+    @JsonProperty("taxId")
     private String taxId;
 
     @Builder
-    public Client(String name, String cellPhone, String email, String taxId) {
+    public Customer(String name, String cellPhone, String email, String taxId) {
         this.name = name;
         this.cellPhone = cellPhone;
         this.email = email;

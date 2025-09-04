@@ -17,4 +17,8 @@ public class AppConfig {
         final ResourceBundle properties = getProperties("application");
         return properties.getString("url.abacate-pay");
     }
+
+    public static String getApiKey() {
+        return new AbacatePayConfiguration("abc_dev_Lt22PXqTB5TkmUN1QGGBgERX").getApiKey();
+    }
 }

@@ -1,10 +1,12 @@
 package com.github.Alym62.sdk.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
+/**
+ * @author Alyasaf Meireles
+ * Annotation for validated field tin - (CPF) in class domain
+ */
+@Documented
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CPF {

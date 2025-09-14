@@ -1,4 +1,4 @@
-package com.github.Alym62.sdk.responses;
+package com.github.Alym62.sdk.utils;
 
 import lombok.*;
 

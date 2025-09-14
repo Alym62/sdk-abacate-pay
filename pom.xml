@@ -5,7 +5,7 @@
   <!-- Configs of SDK -->
   <groupId>com.github.Alym62</groupId>
   <artifactId>sdk-abacate-pay</artifactId>
-  <version>0.1.0</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <!-- Information of SDK -->
@@ -64,6 +64,11 @@
       <groupId>io.github.resilience4j</groupId>
       <artifactId>resilience4j-timelimiter</artifactId>
       <version>1.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.24.3</version>
     </dependency>
   </dependencies>
   <build>

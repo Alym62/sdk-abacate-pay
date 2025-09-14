@@ -5,7 +5,12 @@ import io.github.resilience4j.retry.RetryConfig;
 import lombok.Getter;
 
 import java.time.Duration;
+import java.util.concurrent.TimeoutException;
 
+/**
+ * @author Alyasaf Meireles
+ * Class of configuration AbacatePay with setups - (ApiKey) and inner class - (DefaultConfigurationCircuitAndRetry, CustomConfigurationCircuitAndRetry)
+ */
 public class AbacatePayConfiguration {
     @Getter
     private final String apiKey;
@@ -28,10 +33,15 @@ public class AbacatePayConfiguration {
         this.apiKey = customConfiguration.apiKey;
     }
 
+    /**
+     * @author Alyasaf Meireles
+     * Inner Class of default configurations for Retry and CircuitBreaker
+     */
     public static final class DefaultConfigurationCircuitAndRetry extends ApiKeyConfiguration {
         private final RetryConfig retryConfig = RetryConfig.custom()
                 .maxAttempts(3)
                 .waitDuration(Duration.ofSeconds(2))
+                .retryOnException(ex -> ex instanceof TimeoutException)
                 .build();
 
         private final CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
@@ -50,6 +60,10 @@ public class AbacatePayConfiguration {
         }
     }
 
+    /**
+     * @author Alyasaf Meireles
+     * Inner Class of custom configurations for Retry and CircuitBreaker
+     */
     public static final class CustomConfigurationCircuitAndRetry extends ApiKeyConfiguration {
         private CircuitBreakerConfig circuitBreakerConfig;
         private RetryConfig retryConfig;
@@ -74,6 +88,10 @@ public class AbacatePayConfiguration {
         }
     }
 
+    /**
+     * @author Alyasaf Meireles
+     * Inner Class of base configurations for ApiKey AcabatePay
+     */
     abstract static class ApiKeyConfiguration {
         protected String apiKey;
 

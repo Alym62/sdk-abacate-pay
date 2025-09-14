@@ -1,8 +1,7 @@
 package com.github.Alym62.sdk.processors;
 
 import com.github.Alym62.sdk.annotations.Email;
-import com.github.Alym62.sdk.annotations.Required;
-import com.github.Alym62.sdk.configurations.AppConfig;
+import com.github.Alym62.sdk.utils.AppConfig;
 import com.github.Alym62.sdk.exceptions.FieldRequiredException;
 import com.github.Alym62.sdk.utils.EmailValidator;
 

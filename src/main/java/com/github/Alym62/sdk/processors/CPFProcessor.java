@@ -1,7 +1,7 @@
 package com.github.Alym62.sdk.processors;
 
 import com.github.Alym62.sdk.annotations.CPF;
-import com.github.Alym62.sdk.configurations.AppConfig;
+import com.github.Alym62.sdk.utils.AppConfig;
 import com.github.Alym62.sdk.exceptions.CPFInvalidException;
 import com.github.Alym62.sdk.utils.CPFValidator;
 

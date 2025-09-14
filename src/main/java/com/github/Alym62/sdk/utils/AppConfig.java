@@ -1,4 +1,4 @@
-package com.github.Alym62.sdk.configurations;
+package com.github.Alym62.sdk.utils;
 
 import java.util.ResourceBundle;
 
@@ -16,9 +16,5 @@ public class AppConfig {
     public static String getUrlAbacatePay() {
         final ResourceBundle properties = getProperties("application");
         return properties.getString("url.abacate-pay");
-    }
-
-    public static String getApiKey() {
-        return new AbacatePayConfiguration("abc_dev_Lt22PXqTB5TkmUN1QGGBgERX").getApiKey();
     }
 }

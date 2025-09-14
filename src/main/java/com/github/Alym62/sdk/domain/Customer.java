@@ -11,9 +11,8 @@ import lombok.*;
 
 /**
  * @author Alyasaf Meireles
- * Class will serve as a proxy to implement extra behaviors following the pattern - Proxy
+ * Class of domain with informations in documentation AbacatePay
  */
-
 @Getter
 @ToString
 @NoArgsConstructor
@@ -50,5 +49,16 @@ public class Customer {
         RequiredProcessor.process(this);
         EmailProcessor.process(this);
         CPFProcessor.process(this);
+    }
+
+    /**
+     * @author Alyasaf Meireles
+     * Inner Class of response API AbacatePay
+     */
+    @Data
+    @ToString
+    public static class CustomerResponse {
+        private String id;
+        private Customer metadata;
     }
 }

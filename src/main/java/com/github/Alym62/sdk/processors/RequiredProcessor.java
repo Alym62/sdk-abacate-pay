@@ -2,7 +2,6 @@ package com.github.Alym62.sdk.processors;
 
 import com.github.Alym62.sdk.annotations.Required;
 import com.github.Alym62.sdk.utils.AppConfig;
-import com.github.Alym62.sdk.exceptions.FieldRequiredException;
 
 import java.lang.reflect.Field;
 import java.util.ResourceBundle;
@@ -26,7 +25,7 @@ public class RequiredProcessor {
 
                     messageDefault = messageDefault.replace("${field}", annotation.field());
 
-                    throw new FieldRequiredException(messageDefault);
+                    throw new RuntimeException(messageDefault);
                 }
             }
         }

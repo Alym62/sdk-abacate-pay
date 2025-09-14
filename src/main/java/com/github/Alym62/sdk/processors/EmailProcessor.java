@@ -2,7 +2,6 @@ package com.github.Alym62.sdk.processors;
 
 import com.github.Alym62.sdk.annotations.Email;
 import com.github.Alym62.sdk.utils.AppConfig;
-import com.github.Alym62.sdk.exceptions.FieldRequiredException;
 import com.github.Alym62.sdk.utils.EmailValidator;
 
 import java.lang.reflect.Field;
@@ -25,7 +24,7 @@ public class EmailProcessor {
                     final String email = value.toString();
                     if (!EmailValidator.isValid(email)) {
                         String messageDefault = properties.getString("msg.error.email");
-                        throw new FieldRequiredException(messageDefault);
+                        throw new RuntimeException(messageDefault);
                     }
                 }
             }

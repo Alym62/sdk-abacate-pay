@@ -2,7 +2,6 @@ package com.github.Alym62.sdk.processors;
 
 import com.github.Alym62.sdk.annotations.CPF;
 import com.github.Alym62.sdk.utils.AppConfig;
-import com.github.Alym62.sdk.exceptions.CPFInvalidException;
 import com.github.Alym62.sdk.utils.CPFValidator;
 
 import java.lang.reflect.Field;
@@ -25,7 +24,7 @@ public class CPFProcessor {
                     final String cpf = value.toString();
                     if (!CPFValidator.isValidCpf(cpf)) {
                         String messageDefault = properties.getString("msg.error.cpf");
-                        throw new CPFInvalidException(messageDefault);
+                        throw new RuntimeException(messageDefault);
                     }
                 }
 
